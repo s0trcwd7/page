@@ -1,0 +1,107 @@
+#!/bin/sh
+function IPV4() {
+		read -p "Enter your IPV4SRC:" IPV4SRC
+		echo "Your ${IPV4SRC}: "
+		read -p "Enter your IPV4Interface:" IPV4Interface
+		echo "Your ${IPV4Interface}: "
+cat >> /etc/iptables/add-rule.sh <<EOF
+iptables -t nat -I POSTROUTING 1 -s ${IPV4SRC} -o ${IPV4Interface} -j MASQUERADE
+EOF
+cat >> /etc/iptables/rm-rule.sh <<EOF
+iptables -t nat -D POSTROUTING -s ${IPV4SRC} -o ${IPV4Interface} -j MASQUERADE
+EOF	
+}
+
+function IPV6() {
+read -p "Enter your IPV6SRC:" IPV6SRC
+echo "Your ${IPV6SRC}: "
+read -p "Enter your IPV6Interface:" IPV6Interface
+echo "Enter your ${IPV6Interface}: "
+cat >> /etc/iptables/add-rule.sh <<EOF
+ip6tables -t nat -I POSTROUTING 1 -s ${IPV6SRC} -o ${IPV6Interface} -j MASQUERADE
+EOF
+cat >> /etc/iptables/rm-rule.sh <<EOF
+ip6tables -t nat -D POSTROUTING -s ${IPV6SRC} -o ${IPV6Interface} -j MASQUERADE
+EOF
+}
+
+function IPV4IPV6() {
+		read -p "Enter your IPV4SRC:" IPV4SRC
+		echo "Your ${IPV4SRC}: "
+		read -p "Enter your IPV4Interface:" IPV4Interface
+		echo "Your ${IPV4Interface}: "
+cat >> /etc/iptables/add-rule.sh <<EOF
+iptables -t nat -I POSTROUTING 1 -s ${IPV4SRC} -o ${IPV4Interface} -j MASQUERADE
+EOF
+read -p "Enter your IPV6SRC:" IPV6SRC
+echo "Your ${IPV6SRC}: "
+read -p "Enter your IPV6Interface:" IPV6Interface
+echo "Enter your ${IPV6Interface}: "
+cat >> /etc/iptables/add-rule.sh <<EOF
+ip6tables -t nat -I POSTROUTING 1 -s ${IPV6SRC} -o ${IPV6Interface} -j MASQUERADE
+EOF
+cat >> /etc/iptables/rm-rule.sh <<EOF
+ip6tables -t nat -D POSTROUTING -s ${IPV6SRC} -o ${IPV6Interface} -j MASQUERADE
+EOF
+}
+function () Last {
+mv  -f /etc/sysctl.conf  /etc/sysctl.conf.bak 
+cat > /etc/sysctl.conf <<EOF
+net.ipv4.ip_forward = 1
+net.ipv6.conf.all.forwarding = 1
+EOF
+sysctl -p
+chmod +x /etc/iptables/add-rule.sh /etc/iptables/rm-rule.sh
+cat > /etc/systemd/system/iptables-nat.service <<EOF
+[Unit]
+Description=iptables rules
+Before=network-online.target
+Wants=network-online.target
+[Service]
+Type=oneshot
+ExecStart=/etc/iptables/add-rule.sh
+ExecStop=/etc/iptables/rm-rule.sh
+RemainAfterExit=yes
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl daemon-reload
+systemctl restart iptables-nat.service
+systemctl enable iptables-nat.service
+iptables -t nat -vnL POSTROUTING --line-number
+ip6tables -t nat -vnL POSTROUTING --line-number
+}
+
+function manageMenu() {
+	echo "Welcome to OpenVPN-install!"
+	echo "The git repository is available at: https://github.com/angristan/openvpn-install"
+	echo ""
+	echo "It looks like OpenVPN is already installed."
+	echo ""
+	echo "What do you want to do?"
+	echo "   1) Add a new user"
+	echo "   2) Revoke existing user"
+	echo "   3) Remove OpenVPN"
+	echo "   4) Exit"
+	until [[ $MENU_OPTION =~ ^[1-4]$ ]]; do
+		read -rp "Select an option [1-4]: " MENU_OPTION
+	done
+
+	case $MENU_OPTION in
+	1)
+		IPV4
+		;;
+	2)
+		IPV6
+		;;
+	3)
+		IPV4IPV6
+		;;
+	4)	Last
+		;;	
+	5)
+		exit 0
+		;;
+	esac
+}
+manageMenu
