@@ -22,30 +22,49 @@ Ubuntu 16.04
 ipv6
 openvp   systemctl daemon-reload
 centos7:
+
 systemctl restart iptables-openvpn
+
 systemctl restart  openvpn-server@server
+
 		systemctl restart  openvpn-server@server 开启启动tun0
+  
 		systemctl status openvpn-server@server  
+  
 			active (running)
+   
         systemctl restart iptables-openvpn
+	
 		systemctl status iptables-openvpn  
+  
 			Active: active (exited)
+   
 debian11:
+
 /etc/openvpn/client/new.conf
+
 /etc/openvpn/client/zheng.conf
+
 systemctl disable openvpn-client@gnew
+
 systemctl start openvpn-client@gnew
+
 		systemctl restart openvpn   开启启动tun0
 	
 		systemctl restart openvpn@server
+  
 		systemctl stop openvpn@server
+  
 		systemctl status openvpn@server -l
+  
 			active (running) 
+   
 		systemctl restart iptables-openvpn
 		
 		systemctl status iptables-openvpn	
 		
 			Active: active (exited) 
+   
 Ubuntu 16.04
 		systemctl enable openvpn
   
