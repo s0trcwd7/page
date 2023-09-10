@@ -98,7 +98,7 @@ function manageMenu() {
 	3)
 		IPV4IPV6
 		;;
-#	4)	Last
+	4)	Last
 		;;	
 	5)
 		exit 0
