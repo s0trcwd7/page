@@ -6,7 +6,7 @@
 
 	wget -P /etc/ wget https://raw.githubusercontent.com/s0trcwd1/page/main/screenrc
 
-##################
+
 systemctl daemon-reload
 systemctl enable iptables-openvpn
 systemctl start iptables-openvpn
