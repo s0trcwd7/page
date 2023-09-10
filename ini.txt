@@ -90,8 +90,11 @@ exit
 exit
 
 nata
-cd /data/temp
+
 screen
+
+cd /data/temp
+
 apt-get update
 apt-get upgrade -y
 
