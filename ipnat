@@ -44,7 +44,7 @@ cat >> /etc/iptables/rm-rule.sh <<EOF
 ip6tables -t nat -D POSTROUTING -s ${IPV6SRC} -o ${IPV6Interface} -j MASQUERADE
 EOF
 }
-function () Last {
+function Last()  {
 mv  -f /etc/sysctl.conf  /etc/sysctl.conf.bak 
 cat > /etc/sysctl.conf <<EOF
 net.ipv4.ip_forward = 1
