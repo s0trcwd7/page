@@ -105,16 +105,20 @@ systemctl start apache2
 systemctl stop apache2
 systemctl disable apache2
 ##########################################################################################################################################
+https://gitlab.com/rwkgyg/CFwarp
+
+screen
 
 cd /data/temp/
 apt-get install wget mount unzip tree tcpdump curl telnet -y
 apt-get install fuse3 -y
 sudo apt-get install gnutls-bin
-https://gitlab.com/rwkgyg/CFwarp
+
 cd /root
 wget https://gitlab.com/rwkgyg/CFwarp/raw/main/CFwarp.sh 
 chmod +x CFwarp.sh
 bash CFwarp.sh
+
 cd /data/temp/
 wget https://www.rarlab.com/rar/rarlinux-x64-5.6.0.tar.gz
 tar -xvf rarlinux-x64-5.6.0.tar.gz
