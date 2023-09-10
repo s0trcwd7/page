@@ -78,11 +78,16 @@ systemctl restart sshd
 ##########################################################################################################################################
 
 cd /data/temp
+
 apt-get install locales
+
 dpkg-reconfigure locales
+
 en_US.UTF-8 zh_CN.UTF-8,2312,gbk.选en_US.UTF-8
+
 apt-get update
 apt-get upgrade -y
+
 exit
 screen -ls
 screen -D -r
