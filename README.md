@@ -31,7 +31,7 @@ systemctl restart  openvpn-server@server
   
 		systemctl status openvpn-server@server  
   
-			active (running)
+		active (running)
    
         systemctl restart iptables-openvpn
 	
