@@ -49,13 +49,13 @@ systemctl disable openvpn-client@gnew
 
 systemctl start openvpn-client@gnew
 
-		systemctl restart openvpn   开启启动tun0
+	systemctl restart openvpn   开启启动tun0
 	
-		systemctl restart openvpn@server
+	systemctl restart openvpn@server
   
-		systemctl stop openvpn@server
+	systemctl stop openvpn@server
   
-		systemctl status openvpn@server -l
+	systemctl status openvpn@server -l
   
 			active (running) 
    
