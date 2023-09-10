@@ -108,8 +108,10 @@ exit
 screen -ls
 screen -D -r
 systemctl start apache2
+
 systemctl stop apache2
 systemctl disable apache2
+
 ##########################################################################################################################################
 https://gitlab.com/rwkgyg/CFwarp
 
@@ -136,6 +138,7 @@ cd ../
 cd /data/temp/
 apt-get install python3  ffmpeg  -y
 apt-get install nano net-tools -y
+
 ##########################################################################################################################################
 cat /dev/net/tun
 : File descriptor in bad state
