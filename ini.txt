@@ -1,9 +1,9 @@
 sudo -i
+touch /root/.vim/vimrc
 mkdir -p /mnt/blockstorage/data/pikpak
 mkdir -p /mnt/blockstorage/sh/
 mkdir -p /etc/iptables/
 mkdir -p /root/.vim
-touch /root/.vim/vimrc
 mkdir -p /data/p1new
 mkdir -p /data/wgcf
 mkdir -p /data/ny/
