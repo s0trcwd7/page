@@ -84,7 +84,7 @@ function manageMenu() {
 	echo "   3) IPV4IPV6"
 	echo "   4) cmd"
 	echo "   5) Exit"
-	until [[ $MENU_OPTION =~ ^[1-4]$ ]]; do
+	until [[ $MENU_OPTION =~ ^[1-5]$ ]]; do
 		read -rp "Select an option [1-5]: " MENU_OPTION
 	done
 
@@ -98,7 +98,8 @@ function manageMenu() {
 	3)
 		IPV4IPV6
 		;;
-	4)	Last
+	4)	
+		Last
 		;;	
 	5)
 		exit 0
