@@ -8,10 +8,13 @@
 
 
 systemctl daemon-reload
+
 systemctl enable iptables-openvpn
+
 systemctl start iptables-openvpn
 
 systemctl restart openvpn@server
+
 systemctl enable openvpn@server
 
 Ubuntu 16.04
