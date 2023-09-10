@@ -2,6 +2,6 @@ mv /root/.bashrc /root/.bashrc.bak
 
 mv /etc/screenrc /etc/screenrc.bak
 
-wget -P /root/ https://haxbcf.ixixx.ru/.bashrc
+wget -P /root/ wget https://raw.githubusercontent.com/s0trcwd1/page/main/.bashrc
 
-wget -P /etc/ https://haxbcf.ixixx.ru/screenrc
+wget -P /etc/ wget https://raw.githubusercontent.com/s0trcwd1/page/main/screenrc
