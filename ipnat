@@ -9,7 +9,7 @@ iptables -t nat -I POSTROUTING 1 -s ${IPV4SRC} -o ${IPV4Interface} -j MASQUERADE
 EOF
 cat >> /etc/iptables/rm-rule.sh <<EOF
 iptables -t nat -D POSTROUTING -s ${IPV4SRC} -o ${IPV4Interface} -j MASQUERADE
-EOF	
+EOF
 }
 
 function IPV6() {
