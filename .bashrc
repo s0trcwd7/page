@@ -130,6 +130,6 @@ if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
 
-#. "/root/.acme.sh/acme.sh.env"
+##. "/root/.acme.sh/acme.sh.env"
 
 #screen -wipe
