@@ -20,16 +20,13 @@ systemctl start iptables-openvpn
 
 	systemctl daemon-reload
 
-	systemctl enable iptables-openvpn
-
 	systemctl start iptables-openvpn
 
-	systemctl restart openvpn@server
+ 	systemctl enable iptables-openvpn
 
-	systemctl enable openvpn@server
+ 	systemctl status iptables-openvpn
 
-	systemctl enable openvpn
-
+		Active: active (exited)
 
 centos7:
 
