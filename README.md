@@ -115,6 +115,10 @@ systemctl is-enabled warp-svc
 
 显示iptable规则:
 
+
+IPV4
+
+
 iptables -t nat -L -n -v
 
 iptables -t nat -vnL POSTROUTING --line-number
@@ -122,6 +126,10 @@ iptables -t nat -vnL POSTROUTING --line-number
 iptables -L -n --line-number |grep 21 //--line-number可以显示规则序号，在删除的时候比较方便
 
 iptables -R INPUT 3 -j DROP    //将规则3改成DROP
+
+
+
+
 
 IPV6
 
