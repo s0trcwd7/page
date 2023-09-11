@@ -169,6 +169,16 @@ cd /data/temp/
 
 ##########################################################################################################################################
 
+cd /etc/systemd/
+cp -rf journald.conf journald.conf.bak
+cat >/etc/systemd/journald.conf << EOF
+[Journal]
+SystemMaxUse=50M
+EOF
+du -sh /var/log/journal/
+ 
+systemctl restart systemd-journald.service
+apt clean all
 
 
 
