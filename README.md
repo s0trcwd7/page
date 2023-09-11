@@ -123,6 +123,17 @@ iptables -L -n --line-number |grep 21 //--line-number可以显示规则序号，
 
 iptables -R INPUT 3 -j DROP    //将规则3改成DROP
 
+IPV6
+
+ip6tables -t nat -L -n -v
+
+ip6tables -t nat -vnL POSTROUTING --line-number
+
+ip6tables -L -n --line-number |grep 21 //--line-number可以显示规则序号，在删除的时候比较方便
+
+ip6tables -R INPUT 3 -j DROP //将规则3改成DROP
+
+
 删除iptables规则
 
 iptables -t nat -D POSTROUTING 1  //删除nat表中postrouting的第一条规则  
