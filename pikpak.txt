@@ -1,0 +1,44 @@
+pin1001@yopmail.com
+pin1002@yopmail.com
+pin1003@yopmail.com
+pin1004@yopmail.com
+pin1005@yopmail.com
+pin1006@yopmail.com
+pin1007@yopmail.com
+pin1008@yopmail.com
+pin1009@yopmail.com
+pin1010@yopmail.com
+pin1011@yopmail.com
+pin1012@yopmail.com
+pin1013@yopmail.com
+pin1014@yopmail.com
+pin1015@pirolsnet.com
+pin1016@pirolsnet.com
+
+
+https://yopmail.com/zh/
+https://temp-mail.io/en/message/cde5b385-7700-4940-b8ae-f8bdbb9b2b0d
+
+神雕侠侣.Return.of.The.Condor.Heroes.1995.EP01-32.HD1080P.国语中字:
+magnet:?xt=urn:btih:AA4AE486E61DEAD77090292459E6E81FE5832190
+
+神雕侠侣.Return.of.The.Condor.Heroes.1995.EP01-32.HD2160P&4K.国粤双语中字:
+magnet:?xt=urn:btih:FB8B9FBBAA4ADA6CEA2AA7508D0E91DC5A94DA81
+
+
+
+https://mypikpak.com/drive/activity/invited?invitation-code=98524924
+
+pikpak:
+################################################################################################
+cd /data/temp/
+mkdir -p /mnt/pikpakDrive /var/run/pikpak-fuse
+wget https://github.com/ykxVK8yL5L/pikpak-fuse/releases/download/v0.1.14/pikpak-fuse_0.1.14_amd64.deb
+dpkg -i pikpak-fuse_0.1.14_amd64.deb
+chmod +x pikpak-fuse_0.1.13_amd64.deb
+pikpak-fuse --pikpak-user xxx --pikpak-password xxx -w /var/run/pikpak-fuse /mnt/pikpakDrive
+
+################################################################################################
+
+
+
