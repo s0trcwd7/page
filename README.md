@@ -146,6 +146,8 @@ ip6tables -R INPUT 3 -j DROP //将规则3改成DROP
 
 iptables -t nat -D POSTROUTING 1  //删除nat表中postrouting的第一条规则  
 
+ip6tables -t nat -D POSTROUTING 1  //删除nat表中postrouting的第一条规则  
+
 iptables -t nat -F POSTROUTING   //清空nat表POSTROUTING所有规则
 
 iptables -F INPUT   //清空 filter表INPUT所有规则  
