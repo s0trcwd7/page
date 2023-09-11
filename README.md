@@ -26,13 +26,13 @@ FW
 
 centos7:
 
-		systemctl daemon-reload
+	systemctl daemon-reload
   
-		systemctl enable openvpn-server@server
+	systemctl enable openvpn-server@server
   
-		systemctl restart openvpn-server@server
+	systemctl restart openvpn-server@server
   
-		systemctl restart  openvpn-server@server
+	systemctl restart  openvpn-server@server
 
 
   
@@ -65,7 +65,8 @@ systemctl start openvpn-client@gnew
 
    
 Ubuntu 16.04
-		systemctl enable openvpn
+
+	systemctl enable openvpn
   
 
 #########
