@@ -62,11 +62,7 @@ systemctl start openvpn-client@gnew
   
 		active (running) 
    
-	systemctl restart iptables-openvpn
-		
-	systemctl status iptables-openvpn	
-		
-		Active: active (exited) 
+
    
 Ubuntu 16.04
 		systemctl enable openvpn
