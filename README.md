@@ -44,7 +44,11 @@ centos7:
 	
 		systemctl status iptables-openvpn  
   
+Ubuntu 16.04
 
+	systemctl enable openvpn
+
+ 	systemctl start openvpn
    
 debian11:
 
