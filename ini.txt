@@ -110,11 +110,12 @@ apt-get upgrade -y
 
 screen -ls
 screen -D -r
-systemctl start apache2
 
 systemctl stop apache2
 systemctl disable apache2
 
+
+systemctl start apache2
 https://gitlab.com/rwkgyg/CFwarp
 
 exit
