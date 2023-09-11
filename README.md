@@ -14,6 +14,10 @@
 
 FW
 
+systemctl enable iptables-openvpn
+
+systemctl start iptables-openvpn
+
 	systemctl daemon-reload
 
 	systemctl enable iptables-openvpn
