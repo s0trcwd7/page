@@ -112,27 +112,43 @@ systemctl is-enabled warp-svc
 
 
 ##########################################################################################################################################
+
 显示iptable规则:
+
 iptables -t nat -L -n -v
+
 iptables -t nat -vnL POSTROUTING --line-number
+
 iptables -L -n --line-number |grep 21 //--line-number可以显示规则序号，在删除的时候比较方便
+
 iptables -R INPUT 3 -j DROP    //将规则3改成DROP
+
 删除iptables规则
+
 iptables -t nat -D POSTROUTING 1  //删除nat表中postrouting的第一条规则  
+
 iptables -t nat -F POSTROUTING   //清空nat表POSTROUTING所有规则
+
 iptables -F INPUT   //清空 filter表INPUT所有规则  
+
 iptables -F    //清空所有规则 
+
 iptables -D INPUT 3  //删除input的第3条规则  
+
 iptables -P INPUT DROP  //设置filter表INPUT默认规则是 DROP  
+
 /etc/init.d/iptables save.上面只是一些最基本的操作，要想灵活运用，还要一定时间的实际操作。
+
 iptables -t nat -vnL POST_trusted --line-number  | nl
+
 iptables -l
+
 ##########################################################################################################################################
 
-
-
-
 warp-cli --accept-tos status
+
 warp-cli --accept-tos account
+
 warp-cli --accept-tos settings
- ###
+
+
