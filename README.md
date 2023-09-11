@@ -1,4 +1,9 @@
-	mv /root/.bashrc /root/.bashrc.bak
+获取网盘配额
+	BaiduPCS-Go quota
+
+ copy
+
+ 	mv /root/.bashrc /root/.bashrc.bak
 
 	mv /etc/screenrc /etc/screenrc.bak
 
