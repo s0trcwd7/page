@@ -132,6 +132,7 @@ wget https://gitlab.com/rwkgyg/CFwarp/raw/main/CFwarp.sh
 chmod +x CFwarp.sh
 bash CFwarp.sh
 
+apt install git
 cd /data/temp/
 wget https://www.rarlab.com/rar/rarlinux-x64-5.6.0.tar.gz
 tar -xvf rarlinux-x64-5.6.0.tar.gz
