@@ -32,14 +32,9 @@ centos7:
   
 		systemctl restart openvpn-server@server
   
-		systemctl restart iptables-openvpn
-
 		systemctl restart  openvpn-server@server
 
-   
-		systemctl restart iptables-openvpn
-	
-		systemctl status iptables-openvpn  
+
   
 Ubuntu 16.04
 
