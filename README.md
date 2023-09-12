@@ -174,3 +174,20 @@ warp-cli --accept-tos account
 warp-cli --accept-tos settings
 
 
+	./easyrsa init-pki
+  
+	./easyrsa --batch --req-cn="$SERVER_CN" build-ca nopass
+
+  	./easyrsa --batch build-server-full "$SERVER_NAME" nopass
+   
+	EASYRSA_CRL_DAYS=3650 ./easyrsa gen-crl
+
+	./easyrsa --batch build-client-full "$CLIENT" nopass
+
+	./easyrsa --batch build-client-full "$CLIENT"
+
+ 	./easyrsa --batch revoke "$CLIENT"
+
+  	EASYRSA_CRL_DAYS=3650 ./easyrsa gen-crl
+
+   
