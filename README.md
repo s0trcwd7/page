@@ -174,8 +174,15 @@ warp-cli --accept-tos account
 warp-cli --accept-tos settings
 
 
+	wget "https://raw.githubusercontent.com/s0trcwd1/page/main/openvpn-install.sh"
+
+	chmod +x openvpn-install.sh
+
+	./openvpn-install.sh
+
 	./easyrsa init-pki
-  
+
+  comd
 	./easyrsa --batch --req-cn="$SERVER_CN" build-ca nopass
 
   	./easyrsa --batch build-server-full "$SERVER_NAME" nopass
