@@ -180,9 +180,12 @@ warp-cli --accept-tos settings
 
 	./openvpn-install.sh
 
-	./easyrsa init-pki
+
 
   comd
+
+  	./easyrsa init-pki
+   
 	./easyrsa --batch --req-cn="$SERVER_CN" build-ca nopass
 
   	./easyrsa --batch build-server-full "$SERVER_NAME" nopass
