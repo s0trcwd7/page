@@ -1,4 +1,8 @@
 
 openssl crl -in pki/crl.pem -text -noout
 
+openssl crl -text -noout -in /etc/openvpn/crl.pem
+
+
+
 openssl x509 -noout -text -in
