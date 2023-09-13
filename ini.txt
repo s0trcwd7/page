@@ -126,7 +126,7 @@ exit
 nat
 screen
 cd /data/temp/
-apt-get install wget mount unzip tree tcpdump curl fuse3 gnutls-bi -y
+apt-get install wget mount unzip tree tcpdump curl fuse3 gnutls-bin -y
 
 cd /root
 wget https://gitlab.com/rwkgyg/CFwarp/raw/main/CFwarp.sh 
