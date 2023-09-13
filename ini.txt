@@ -127,6 +127,7 @@ nat
 screen
 cd /data/temp/
 apt-get install wget mount unzip tree tcpdump curl fuse3 gnutls-bin -y
+apt-get install nano net-tools -y
 
 cd /root
 wget https://gitlab.com/rwkgyg/CFwarp/raw/main/CFwarp.sh 
@@ -144,7 +145,7 @@ cd ../
 
 cd /data/temp/
 apt-get install python3  ffmpeg  -y
-apt-get install nano net-tools -y
+
 
 ##########################################################################################################################################
 cat /dev/net/tun
